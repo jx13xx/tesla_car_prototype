@@ -1,7 +1,8 @@
 import styled from 'styled-components/native';
 
 const ButtonContainer = styled.TouchableOpacity`
-  margin-vertical: 40px;
+  //margin-vertical: 40px;
+  margin-left: auto;
   width: 150px;
   height: 50px;
   padding: 12px;
