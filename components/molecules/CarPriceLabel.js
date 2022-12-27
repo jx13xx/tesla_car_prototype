@@ -63,12 +63,12 @@ export const CarPriceLabel = ({onPress, props}) => {
 const styles = StyleSheet.create({
   priceLabel: {
     flexDirection: 'row',
-    marginLeft: 20,
-    marginTop: '5px',
+    marginLeft: '2%',
+    marginTop: '2%',
     display: 'flex',
   },
   text: {
-    marginLeft: '20',
+    marginLeft: '2%',
     flex: 0,
     color: 'white',
   },
