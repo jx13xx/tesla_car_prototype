@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import {Button, StatusBar, StyleSheet, Text, View} from 'react-native';
 import {PrefixText, SuffixText} from '../../components/organisms/Text';
 import Description from '../../components/Description';
-import Amount from '../../components/molecules/Amount';
-import {PressableButton} from '../../components/Button';
 import PriceContainer from '../../components/organisms/PriceContainer';
 
 const CarSpecification = props => {

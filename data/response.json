@@ -1,4 +1,5 @@
 [{
+  "id": 1,
   "make": "Tesla",
   "model": "model 3",
   "features": {
@@ -22,6 +23,7 @@
   },
   "image": "https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MT322,$PPMR,$W41B,$IBB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&crop=0,0,0,0&version=v0121-078c13b0d202212151058"
 },{
+  "id": 2,
   "make": "Tesla",
   "model": "model y",
   "features": {
@@ -45,6 +47,7 @@
   },
   "image": "https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MT322,$PPMR,$W41B,$IBB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&crop=0,0,0,0&version=v0121-078c13b0d202212151058"
 },{
+  "id": 3,
   "make": "Tesla",
   "model": "model s",
   "features": {
@@ -68,6 +71,7 @@
   },
   "image": "https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MT322,$PPMR,$W41B,$IBB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&crop=0,0,0,0&version=v0121-078c13b0d202212151058"
 },{
+  "id": 4,
   "make": "Tesla",
   "model": "model x",
   "features": {
@@ -91,6 +95,7 @@
   },
   "image": "https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MT322,$PPMR,$W41B,$IBB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&crop=0,0,0,0&version=v0121-078c13b0d202212151058"
 },{
+  "id": 5,
   "make": "Tesla",
   "model": "model z",
   "features": {
