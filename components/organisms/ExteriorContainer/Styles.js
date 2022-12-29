@@ -2,11 +2,8 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   display: flex;
-  //flex-direction: row;
-  //flex-wrap: wrap;
-  //gap: 100px;
-  //justify-content: center;
-  //align-items: center;
+  margin-top: 20px;
+  margin-left: 30px;
 `;
 
 export const ColorLayout = styled.View`
