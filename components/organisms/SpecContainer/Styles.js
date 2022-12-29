@@ -1,16 +1,18 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   gap: 100px;
   justify-content: center;
   align-items: center;
 `;
 
 export const SpecDescriptionContainer = styled.View`
-  padding-left: 15px;
+  flex: 1;
+  margin-left: auto;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
 `;
 
 export const SpecDescText = styled.Text`
