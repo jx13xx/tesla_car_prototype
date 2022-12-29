@@ -18,7 +18,6 @@ const PriceContainer = ({navigateNextTo}) => {
   const {step, setStep} = useContext(StepProviderContext);
 
   const NextStep = () => {
-    console.log('next step function');
     if (step === 1) {
       setStep(step + 1);
       navigate(EXTERIOR_SCREEN);
