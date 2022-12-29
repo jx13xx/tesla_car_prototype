@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Button, StatusBar, StyleSheet, Text, View} from 'react-native';
 import Modal from 'react-native-modal';
+import PriceContainer from './organisms/PriceContainer';
 
 const BottomModal = props => {
   const [isModalVisible, setModalVisible] = useState(true);

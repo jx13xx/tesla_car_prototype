@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import {css} from 'styled-components';
 
 export const SpecLabelPrefix = styled.Text`
   //font-family: 'Nunito';
