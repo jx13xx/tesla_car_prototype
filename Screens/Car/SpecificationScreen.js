@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import CarSpecification from './CarSpecification';
-import GrayLabel from '../../components/molecules/GrayLabel';
-import {CarPicture} from '../../components/molecules/CarPicture';
+import GrayLabel from '../../components/molecules/GrayLabel/GrayLabel';
+import {CarPicture} from '../../components/molecules/CarPicture/CarPicture';
 import redTesla from '../../assets/images/red.png';
 import SpecContainer from '../../components/organisms/SpecContainer/SpecContainer';
-import ModalDiv from '../../components/organisms/ModalDiv';
+import ModalDiv from '../../components/organisms/ModalDiv/ModalDiv';
 import {
   CarSpecLayout,
   CarSpecPictureLayout,

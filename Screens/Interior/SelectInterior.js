@@ -1,5 +1,5 @@
-import PriceContainer from '../../components/organisms/PriceContainer';
-import GrayLabel from '../../components/molecules/GrayLabel';
+import PriceContainer from '../../components/organisms/PriceContainer/PriceContainer';
+import GrayLabel from '../../components/molecules/GrayLabel/GrayLabel';
 import InteriorColorContainer from '../../components/organisms/InteriorContainer/InteriorColorContainer';
 import {SelectInteriorContainer} from './Styles';
 

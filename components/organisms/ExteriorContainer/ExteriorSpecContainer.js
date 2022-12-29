@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
 import {ColorLayout, Container} from './Styles';
-import {SpecLabelPrefix, SpecLabelSuffix} from '../../molecules/SpecLabel';
+import {
+  SpecLabelPrefix,
+  SpecLabelSuffix,
+} from '../../molecules/SpecLabel/SpecLabel';
 import ColorSelector from '../../molecules/ColorSelector/ColorSelector';
 import SubText from '../../molecules/SubText/SubText';
 import {HorizontalDivider} from '../../../Screens/Exterior/Styles';

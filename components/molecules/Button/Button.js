@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-const ButtonContainer = styled.TouchableOpacity`
+export const ButtonContainer = styled.TouchableOpacity`
   //margin-vertical: 40px;
   margin-left: auto;
   width: 150px;
@@ -12,7 +12,7 @@ const ButtonContainer = styled.TouchableOpacity`
   align-items: center;
 `;
 
-const ButtonText = styled.Text`
+export const ButtonText = styled.Text`
   font-style: normal;
   //font-family: Nunito-Regular;
   font-weight: 400;
@@ -23,9 +23,3 @@ const ButtonText = styled.Text`
   text-transform: uppercase;
   color: #000000;
 `;
-
-export const PressableButton = ({onPress, bgColor, title}) => (
-  <ButtonContainer onPress={onPress} bgColor={bgColor}>
-    <ButtonText>{title}</ButtonText>
-  </ButtonContainer>
-);

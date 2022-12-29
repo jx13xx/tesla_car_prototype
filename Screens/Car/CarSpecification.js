@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {PrefixText, SuffixText} from '../../components/organisms/Text';
-import Description from '../../components/Description';
-import PriceContainer from '../../components/organisms/PriceContainer';
+import {PrefixText} from '../../components/molecules/PrefixText/PrefixText';
+import {SuffixText} from '../../components/molecules/SuffixText/SuffixText';
+import Description from '../../components/molecules/Description/Description';
+import PriceContainer from '../../components/organisms/PriceContainer/PriceContainer';
 import {
   CarSpecificationContainer,
   CenterView,

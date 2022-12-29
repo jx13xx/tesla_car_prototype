@@ -1,5 +1,5 @@
-import React from 'react';
-import GreyLabel from '../../components/molecules/GrayLabel';
+import React, {useContext} from 'react';
+import GreyLabel from '../../components/molecules/GrayLabel/GrayLabel';
 import {
   View,
   StyleSheet,
@@ -7,10 +7,11 @@ import {
   Dimensions,
   SafeAreaView,
 } from 'react-native';
-import CarPriceCard from '../../components/organisms/CarPriceCard';
+import CarPriceCard from '../../components/organisms/CarPriceCard/CarPriceCard';
 import redTesla from '../../assets/images/red.png';
 import blueTesla from '../../assets/images/blue.png';
 import whiteTesla from '../../assets/images/white.png';
+import {StepProviderContext} from '../../Global/StepContext';
 
 const data = [
   {

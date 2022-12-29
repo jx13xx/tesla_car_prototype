@@ -1,15 +1,15 @@
 import React, {useContext} from 'react';
 import styled from 'styled-components/native';
 import {View, Image, StyleSheet} from 'react-native';
-import {CarPriceLabel} from '../molecules/CarPriceLabel';
+import {CarPriceLabel} from '../../molecules/CarPriceLabel/CarPriceLabel';
 import {
   CARSPECIFICATION_SCREEN,
   INTERIOR_SCREEN,
-} from '../../Navigators/NavigationScreenType';
+} from '../../../Navigators/NavigationScreenType';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigation} from '@react-navigation/native';
-import {incrementStepCounter} from '../../Redux/action';
-import {StepProviderContext} from '../../Global/StepContext';
+import {incrementStepCounter} from '../../../Redux/action';
+import {StepProviderContext} from '../../../Global/StepContext';
 
 const CarPriceContainer = styled.TouchableOpacity`
   width: 100%;

@@ -1,8 +1,8 @@
 import React from 'react';
-import GrayLabel from '../../components/molecules/GrayLabel';
-import {CarPicture} from '../../components/molecules/CarPicture';
+import GrayLabel from '../../components/molecules/GrayLabel/GrayLabel';
+import {CarPicture} from '../../components/molecules/CarPicture/CarPicture';
 import whiteTesla from '../../assets/images/white.png';
-import ModalDiv from '../../components/organisms/ModalDiv';
+import ModalDiv from '../../components/organisms/ModalDiv/ModalDiv';
 import {
   ExteriorContainer,
   ExteriorScreenContainer,

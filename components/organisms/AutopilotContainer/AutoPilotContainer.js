@@ -1,4 +1,7 @@
-import {SpecLabelPrefix, SpecLabelSuffix} from '../../molecules/SpecLabel';
+import {
+  SpecLabelPrefix,
+  SpecLabelSuffix,
+} from '../../molecules/SpecLabel/SpecLabel';
 import {AutopilotSpecContainer, AutopilotSpecText} from './Styles';
 import {useState} from 'react';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
