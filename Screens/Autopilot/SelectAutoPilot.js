@@ -1,27 +1,24 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
 import GrayLabel from '../../components/molecules/GrayLabel';
 import PriceContainer from '../../components/organisms/PriceContainer';
-import AutoPilotContainer from '../../components/organisms/AutoPilotContainer';
+import AutoPilotContainer from '../../components/organisms/AutopilotContainer/AutoPilotContainer';
+import {SelectAutoPilotContainer} from './Styles';
+import Description from '../../components/Description';
 
 const SelectAutoPilot = () => {
   return (
-    <View>
-      <GrayLabel>Autopilot</GrayLabel>
+    <SelectAutoPilotContainer>
+      <GrayLabel style={{marginTop: '5%', marginBottom: '5%'}}>
+        Autopilot
+      </GrayLabel>
       <AutoPilotContainer />
-      <View>
-        <PriceContainer />
-      </View>
-    </View>
+      <Description>
+        Atomatic driving from highway on-ramp to off-ramp including interchanges
+        and overtaking slower cars.
+      </Description>
+      <PriceContainer />
+    </SelectAutoPilotContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    display: 'flex',
-    marginLeft: '5%',
-    marginRight: '5%',
-  },
-});
 
 export default SelectAutoPilot;

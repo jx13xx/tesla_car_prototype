@@ -43,7 +43,7 @@ const SpecContainer = props => {
               {element.description}
             </SpecDescText>
             <SpecPriceText active={toggleActiveStyles(index)}>
-              {element.price}
+              {element.currency} {element.price}
             </SpecPriceText>
           </Pressable>
         </SpecDescriptionContainer>

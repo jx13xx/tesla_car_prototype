@@ -10,6 +10,9 @@ export const InteriorSpecContainer = styled.View`
 `;
 
 export const InteriorSpecText = styled.View`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding-top: 10px;
   margin-left: 15px;
   margin-right: 15px;
