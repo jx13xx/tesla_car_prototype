@@ -11,3 +11,5 @@ const StepProvider = ({children}) => {
     </StepProviderContext.Provider>
   );
 };
+
+export {StepProviderContext, StepProvider};
