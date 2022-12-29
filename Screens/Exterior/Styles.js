@@ -15,7 +15,6 @@ export const ExteriorContainer = styled.View`
 
 export const ExteriorSpecLayout = styled.View`
   display: flex;
-  //margin-left: 10px;
   margin-right: 50px;
   align-items: center;
   justify-content: center;
@@ -23,10 +22,9 @@ export const ExteriorSpecLayout = styled.View`
 
 export const HorizontalDivider = styled.View`
   width: 100%;
+  background-color: #cfd3d9;
   border: 0.2px;
   margin-top: 20px;
   margin-bottom: 20px;
-  //margin-right: 10px;
-  //margin-left: 20px;
   background-color: #cfd3d9;
 `;

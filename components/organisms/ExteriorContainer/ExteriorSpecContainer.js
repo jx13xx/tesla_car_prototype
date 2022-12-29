@@ -1,25 +1,72 @@
-import React from 'react';
-import {Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {View} from 'react-native';
 import {ColorLayout, Container} from './Styles';
 import {SpecLabelPrefix, SpecLabelSuffix} from '../../molecules/SpecLabel';
 import ColorSelector from '../../molecules/ColorSelector/ColorSelector';
 import SubText from '../../molecules/SubText/SubText';
 import {HorizontalDivider} from '../../../Screens/Exterior/Styles';
+import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
 const ExteriorSpecContainer = props => {
+  const [colors, setColors] = useState({
+    activeObject: null,
+    objects: {
+      id: 1,
+      colors: [
+        {id: 1, colorName: 'Pearl White', value: '#fff', baseColor: true},
+        {id: 1, colorName: 'Solid Black', value: '#474747', baseColor: false},
+        {
+          id: 1,
+          colorName: 'Midnight Silver',
+          value: '#45525C',
+          baseColor: false,
+        },
+        {id: 1, colorName: 'Deep Blue', value: '#044BB6', baseColor: false},
+        {
+          id: 1,
+          colorName: 'Red Multi-Coat',
+          value: '#D01000',
+          baseColor: false,
+        },
+      ],
+    },
+  });
+  const [includedColor, setIncludedColor] = useState(false);
+
+  function toggleActive(index) {
+    setColors({
+      ...colors,
+      activeObject: colors.objects.colors[index],
+    });
+
+    if (colors.objects.colors[index].baseColor === true) {
+      setIncludedColor(true);
+    } else {
+      setIncludedColor(false);
+    }
+  }
+
+  function toggleActiveStyles(index) {
+    return colors.objects.colors[index] === colors.activeObject ? true : false;
+  }
   return (
     <Container>
       <SpecLabelPrefix active>Pearl White Multi-Coat</SpecLabelPrefix>
-      <SpecLabelSuffix active>Included</SpecLabelSuffix>
+      {includedColor && <SpecLabelSuffix active>Included</SpecLabelSuffix>}
       <View>
         <ColorLayout>
-          <ColorSelector color={'#474747'} />
-          <ColorSelector color={'#45525C'} />
-          <ColorSelector active color={'#044BB6'} />
-          <ColorSelector active color={'#fff'} />
-          <ColorSelector active color={'#D01000'} />
+          {colors.objects.colors.map((element, index) => (
+            <Pressable onPress={() => toggleActive(index)}>
+              <ColorSelector
+                color={element.value}
+                active={toggleActiveStyles(index)}
+              />
+            </Pressable>
+          ))}
         </ColorLayout>
         <HorizontalDivider />
+      </View>
+      <View style={{marginTop: 40}}>
         <SubText>20" Performance Wheels</SubText>
         <SubText>Carbon fibre spoiler</SubText>
       </View>
