@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Image, SafeAreaView, View, Dimensions} from 'react-native';
-import rakBankLogo from '../../assets/logo/rak_bank_small.png';
+import rakBankLogo from '../../../assets/logo/rak_bank_small.png';
 
 const Header = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Image} from 'react-native';
-import ModalDiv from '../../components/organisms/ModalDiv';
+import ModalDiv from '../../components/organisms/ModalDiv/ModalDiv';
 import interiorImage from '../../assets/images/interior.png';
 import SelectInterior from './SelectInterior';
 import {InterContainer} from './Styles';

@@ -1,7 +1,7 @@
 import {StyleSheet, View} from 'react-native';
-import Amount from '../molecules/Amount/Amount';
+import Amount from '../../molecules/Amount/Amount';
 import {useNavigation} from '@react-navigation/native';
-import {PressableButton} from '../Button';
+import {PressableButton} from '../Button/Button';
 import React, {useContext, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {
@@ -10,9 +10,9 @@ import {
   HOME_SCREEN,
   INTERIOR_SCREEN,
   SUMMARY_SCREEN,
-} from '../../Navigators/NavigationScreenType';
-import {StepProviderContext} from '../../Global/StepContext';
-import {navigate} from '../../Navigators/RootNavigator';
+} from '../../../Navigators/NavigationScreenType';
+import {StepProviderContext} from '../../../Global/StepContext';
+import {navigate} from '../../../Navigators/RootNavigator';
 
 const PriceContainer = ({navigateNextTo}) => {
   const {step, setStep} = useContext(StepProviderContext);

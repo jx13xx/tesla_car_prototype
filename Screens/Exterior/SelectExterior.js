@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import PriceContainer from '../../components/organisms/PriceContainer';
+import PriceContainer from '../../components/organisms/PriceContainer/PriceContainer';
 
 const SelectExterior = () => {
   return (

@@ -1,4 +1,4 @@
-import {ButtonContainer, ButtonText} from './molecules/Button/Button';
+import {ButtonContainer, ButtonText} from '../../molecules/Button/Button';
 
 export const PressableButton = ({onPress, bgColor, title}) => (
   <ButtonContainer onPress={onPress} bgColor={bgColor}>
