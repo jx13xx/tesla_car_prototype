@@ -14,16 +14,16 @@ const ExteriorSpecContainer = props => {
       id: 1,
       colors: [
         {id: 1, colorName: 'Pearl White', value: '#fff', baseColor: true},
-        {id: 1, colorName: 'Solid Black', value: '#474747', baseColor: false},
+        {id: 2, colorName: 'Solid Black', value: '#474747', baseColor: false},
         {
-          id: 1,
+          id: 3,
           colorName: 'Midnight Silver',
           value: '#45525C',
           baseColor: false,
         },
-        {id: 1, colorName: 'Deep Blue', value: '#044BB6', baseColor: false},
+        {id: 4, colorName: 'Deep Blue', value: '#044BB6', baseColor: false},
         {
-          id: 1,
+          id: 5,
           colorName: 'Red Multi-Coat',
           value: '#D01000',
           baseColor: false,
@@ -56,7 +56,7 @@ const ExteriorSpecContainer = props => {
       <View>
         <ColorLayout>
           {colors.objects.colors.map((element, index) => (
-            <Pressable onPress={() => toggleActive(index)}>
+            <Pressable onPress={() => toggleActive(index)} key={element.id}>
               <ColorSelector
                 color={element.value}
                 active={toggleActiveStyles(index)}

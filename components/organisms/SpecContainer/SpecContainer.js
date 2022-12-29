@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import {Button, StatusBar, StyleSheet, Text, View} from 'react-native';
-import {SpecLabelPrefix, SpecLabelSuffix} from '../../molecules/SpecLabel';
 import {
   Container,
   SpecDescriptionContainer,
