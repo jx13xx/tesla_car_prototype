@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import styled from 'styled-components/native';
 import {View, Image, StyleSheet} from 'react-native';
-import {CarPriceLabel} from '../molecules/CarPriceLabel';
+import {CarPriceLabel} from '../molecules/CarPriceLabel/CarPriceLabel';
 import {
   CARSPECIFICATION_SCREEN,
   INTERIOR_SCREEN,

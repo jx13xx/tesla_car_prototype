@@ -1,5 +1,5 @@
 import {StyleSheet, View} from 'react-native';
-import Amount from '../molecules/Amount';
+import Amount from '../molecules/Amount/Amount';
 import {useNavigation} from '@react-navigation/native';
 import {PressableButton} from '../Button';
 import React, {useContext, useState} from 'react';
