@@ -1,7 +1,8 @@
 import styled from 'styled-components/native';
 import {Button, StatusBar, StyleSheet, Text, View} from 'react-native';
+import {numberSeparator} from '../../../utils/NumberSeparator';
 
-const CarPriceLabelContainer = styled.TouchableOpacity`
+const CarPriceLabelContainer = styled.View`
   width: 214px;
   height: 54px;
   padding-left: 20px;
@@ -45,14 +46,14 @@ const CarPriceLabelPrefixTextTwo = styled.Text`
   color: #ffffff;
 `;
 
-export const CarPriceLabel = ({onPress, props}) => {
+export const CarPriceLabel = ({props}) => {
   return (
-    <CarPriceLabelContainer onPress={onPress}>
-      <CarPriceLabelPrefixText>Tesla Model X</CarPriceLabelPrefixText>
+    <CarPriceLabelContainer>
+      <CarPriceLabelPrefixText>Tesla {props.model}</CarPriceLabelPrefixText>
       <View style={styles.priceLabel}>
         <Text style={styles.text}>{props.currency}</Text>
         <CarPriceLabelPrefixTextTwo style={styles.textTwo}>
-          {props.price}
+          {numberSeparator(props.price)}
         </CarPriceLabelPrefixTextTwo>
         <Text style={styles.textTwo}>onwards</Text>
       </View>

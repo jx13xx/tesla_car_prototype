@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {View} from 'react-native';
 import {ColorLayout, Container} from './Styles';
 import {
@@ -9,34 +9,30 @@ import ColorSelector from '../../molecules/ColorSelector/ColorSelector';
 import SubText from '../../molecules/SubText/SubText';
 import {HorizontalDivider} from '../../../Screens/Exterior/Styles';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
+import {useDispatch, useSelector} from 'react-redux';
+import {StepProviderContext} from '../../../Global/StepContext';
+import {getCarExterior} from '../../../Redux/ducks/car';
+import {seedColorResponse} from '../../../Redux/sagas/requests/seedresponse';
 
-const ExteriorSpecContainer = props => {
+const ExteriorSpecContainer = () => {
+  const dispatch = useDispatch();
+  let apiColors = useSelector(state => state.cars.exterior);
+  let listColors = apiColors ? apiColors : seedColorResponse;
+  const {setExteriorPrice, userSelectedCar} = useContext(StepProviderContext);
+  const [colorName, setColorName] = useState();
+
+  useEffect(() => {
+    const dispatcher = () => dispatch(getCarExterior(userSelectedCar));
+    dispatcher();
+  }, [userSelectedCar]);
+
   const [colors, setColors] = useState({
     activeObject: null,
-    objects: {
-      id: 1,
-      colors: [
-        {id: 1, colorName: 'Pearl White', value: '#fff', baseColor: true},
-        {id: 2, colorName: 'Solid Black', value: '#474747', baseColor: false},
-        {
-          id: 3,
-          colorName: 'Midnight Silver',
-          value: '#45525C',
-          baseColor: false,
-        },
-        {id: 4, colorName: 'Deep Blue', value: '#044BB6', baseColor: false},
-        {
-          id: 5,
-          colorName: 'Red Multi-Coat',
-          value: '#D01000',
-          baseColor: false,
-        },
-      ],
-    },
+    objects: listColors,
   });
   const [includedColor, setIncludedColor] = useState(false);
 
-  function toggleActive(index) {
+  function toggleActive(index, element) {
     setColors({
       ...colors,
       activeObject: colors.objects.colors[index],
@@ -47,6 +43,8 @@ const ExteriorSpecContainer = props => {
     } else {
       setIncludedColor(false);
     }
+    setColorName(element.colorName);
+    setExteriorPrice(Number(element.price));
   }
 
   function toggleActiveStyles(index) {
@@ -54,14 +52,16 @@ const ExteriorSpecContainer = props => {
   }
   return (
     <Container>
-      <SpecLabelPrefix active>Pearl White Multi-Coat</SpecLabelPrefix>
+      <SpecLabelPrefix active>{colorName}</SpecLabelPrefix>
       {includedColor && <SpecLabelSuffix active>Included</SpecLabelSuffix>}
       <View>
         <ColorLayout>
           {colors.objects.colors.map((element, index) => (
-            <Pressable onPress={() => toggleActive(index)} key={element.id}>
+            <Pressable
+              onPress={() => toggleActive(index, element)}
+              key={element.id}>
               <ColorSelector
-                color={element.value}
+                color={element.colorValue}
                 active={toggleActiveStyles(index)}
               />
             </Pressable>

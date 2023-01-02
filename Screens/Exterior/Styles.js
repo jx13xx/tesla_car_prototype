@@ -11,6 +11,7 @@ export const ExteriorContainer = styled.View`
   display: flex;
   margin-left: 5px;
   margin-right: 5px;
+  margin-bottom: 10px;
 `;
 
 export const ExteriorSpecLayout = styled.View`

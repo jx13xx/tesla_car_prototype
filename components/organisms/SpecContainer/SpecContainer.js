@@ -1,53 +1,62 @@
-import React, {useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {
   Container,
   SpecDescriptionContainer,
-  SpecDescriptionLabel,
   SpecDescText,
   SpecPriceText,
-  StyledButton,
 } from './Styles';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
+import {useDispatch, useSelector} from 'react-redux';
+import {StepProviderContext} from '../../../Global/StepContext';
+import {getCarFeatures} from '../../../Redux/ducks/car';
+import {seedFeatureRepose} from '../../../Redux/sagas/requests/seedresponse';
+import {numberSeparator} from '../../../utils/NumberSeparator';
 
-const SpecContainer = props => {
+const SpecContainer = () => {
+  const dispatch = useDispatch();
+  let apiFeatures = useSelector(state => state.cars.features);
+  let features = apiFeatures !== undefined ? apiFeatures : seedFeatureRepose;
+  const {setSpecificationPrice, userSelectedCar} =
+    useContext(StepProviderContext);
   const [specification, setSpecification] = useState({
     activeObject: null,
-    objects: {
-      id: 1,
-      specifications: [
-        {id: 1, description: 'Performance', price: '235,000', currency: 'AED'},
-        {id: 2, description: 'Long Range', price: '235,000', currency: 'AED'},
-      ],
-    },
+    objects: features,
   });
-  function toggleActive(index) {
+
+  useEffect(() => {
+    const dispatcher = () => dispatch(getCarFeatures(userSelectedCar));
+    dispatcher();
+  }, [userSelectedCar]);
+
+  function toggleActive(index, element) {
     setSpecification({
       ...specification,
-      activeObject: specification.objects.specifications[index],
+      activeObject: specification.objects[index],
     });
+    setSpecificationPrice(element.price);
   }
 
   function toggleActiveStyles(index) {
-    return specification.objects.specifications[index] ===
-      specification.activeObject
+    return specification.objects[index] === specification.activeObject
       ? true
       : false;
   }
 
   return (
     <Container>
-      {specification.objects.specifications.map((element, index) => (
-        <SpecDescriptionContainer key={element.id}>
-          <Pressable onPress={() => toggleActive(index)}>
-            <SpecDescText active={toggleActiveStyles(index)}>
-              {element.description}
-            </SpecDescText>
-            <SpecPriceText active={toggleActiveStyles(index)}>
-              {element.currency} {element.price}
-            </SpecPriceText>
-          </Pressable>
-        </SpecDescriptionContainer>
-      ))}
+      {features &&
+        specification.objects.map((element, index) => (
+          <SpecDescriptionContainer key={element.id}>
+            <Pressable onPress={() => toggleActive(index, element)}>
+              <SpecDescText active={toggleActiveStyles(index)}>
+                {element.feature}
+              </SpecDescText>
+              <SpecPriceText active={toggleActiveStyles(index)}>
+                AED {numberSeparator(element.price)}
+              </SpecPriceText>
+            </Pressable>
+          </SpecDescriptionContainer>
+        ))}
     </Container>
   );
 };

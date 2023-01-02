@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 const Description = styled.Text`
-  //font-family: 'Nunito';
+  font-family: 'Nunito';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
