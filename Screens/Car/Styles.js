@@ -2,6 +2,8 @@ import styled from 'styled-components/native';
 
 export const SpecificationScreenContainer = styled.View`
   background-color: #f2f5f8;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 `;
 
@@ -30,7 +32,8 @@ export const CarSpecificationContainer = styled.View`
   margin-left: 25px;
   padding-top: 10px;
   margin-right: 25px;
-  margin-bottom: 30px;
+  margin-bottom: 55px;
+  height: 320px;
 `;
 
 export const TopSpecsContainer = styled.View`

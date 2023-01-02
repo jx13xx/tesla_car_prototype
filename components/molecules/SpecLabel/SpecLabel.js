@@ -10,7 +10,7 @@ export const SpecLabelPrefix = styled.Text`
 `;
 
 export const SpecLabelSuffix = styled.Text`
-  //font-family: 'Nunito';
+  font-family: 'Nunito';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;

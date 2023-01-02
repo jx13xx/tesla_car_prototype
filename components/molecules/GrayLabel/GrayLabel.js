@@ -4,7 +4,7 @@ const GreyLabel = styled.Text`
   width: 200px;
   height: 33px;
 
-  //font-family: 'Nunito';
+  font-family: 'Nunito';
   font-style: normal;
   font-weight: 400;
   font-size: 24px;

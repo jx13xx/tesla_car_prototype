@@ -2,7 +2,6 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex-direction: row;
-  gap: 100px;
   justify-content: center;
   align-items: center;
 `;
@@ -16,7 +15,7 @@ export const SpecDescriptionContainer = styled.View`
 `;
 
 export const SpecDescText = styled.Text`
-  //font-family: 'Nunito';
+  font-family: 'Nunito';
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -25,7 +24,7 @@ export const SpecDescText = styled.Text`
 `;
 
 export const SpecPriceText = styled.Text`
-  //font-family: 'Nunito';
+  font-family: 'Nunito';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;

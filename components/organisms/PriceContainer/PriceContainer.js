@@ -1,9 +1,7 @@
 import {StyleSheet, View} from 'react-native';
 import Amount from '../../molecules/Amount/Amount';
-import {useNavigation} from '@react-navigation/native';
 import {PressableButton} from '../Button/Button';
 import React, {useContext, useState} from 'react';
-import {useSelector} from 'react-redux';
 import {
   AUTOPILOT_SCREEN,
   EXTERIOR_SCREEN,
@@ -13,9 +11,32 @@ import {
 } from '../../../Navigators/NavigationScreenType';
 import {StepProviderContext} from '../../../Global/StepContext';
 import {navigate} from '../../../Navigators/RootNavigator';
+import {numberSeparator} from '../../../utils/NumberSeparator';
 
-const PriceContainer = ({navigateNextTo}) => {
-  const {step, setStep} = useContext(StepProviderContext);
+const PriceContainer = () => {
+  const {
+    step,
+    setStep,
+    currency,
+    totalPrice,
+    setTotalPrice,
+    specificationPrice,
+    autoPilotPrice,
+    exteriorPrice,
+    interiorPrice,
+  } = useContext(StepProviderContext);
+
+  const combineSpecs = [
+    specificationPrice,
+    exteriorPrice,
+    interiorPrice,
+    autoPilotPrice,
+  ];
+
+  const sumWithInitial = combineSpecs.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    totalPrice,
+  );
 
   const NextStep = () => {
     if (step === 1) {
@@ -32,13 +53,17 @@ const PriceContainer = ({navigateNextTo}) => {
     }
     if (step === 4) {
       setStep(step + 1);
+      setTotalPrice(sumWithInitial);
       navigate(SUMMARY_SCREEN);
     }
   };
 
   return (
     <View style={styles.priceContainer}>
-      <Amount>AED 235,000</Amount>
+      <Amount>
+        {' '}
+        {currency} {numberSeparator(sumWithInitial)}
+      </Amount>
       <PressableButton onPress={NextStep} title="Next" bgColor="white" />
     </View>
   );

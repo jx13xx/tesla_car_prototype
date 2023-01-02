@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 export const ButtonContainer = styled.TouchableOpacity`
   //margin-vertical: 40px;
   margin-left: auto;
-  width: 150px;
+  width: 140px;
   height: 50px;
   padding: 12px;
   border-radius: 1000px;
@@ -14,7 +14,7 @@ export const ButtonContainer = styled.TouchableOpacity`
 
 export const ButtonText = styled.Text`
   font-style: normal;
-  //font-family: Nunito-Regular;
+  font-family: Nunito-Regular;
   font-weight: 400;
   font-size: 20px;
   line-height: 27px;

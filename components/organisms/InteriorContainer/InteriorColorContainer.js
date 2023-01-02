@@ -3,64 +3,70 @@ import {
   SpecLabelSuffix,
 } from '../../molecules/SpecLabel/SpecLabel';
 import {ColorLayout, InteriorSpecContainer, InteriorSpecText} from './Styles';
-import {useState} from 'react';
+import {useContext, useEffect, useState} from 'react';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import ColorSelector from '../../molecules/ColorSelector/ColorSelector';
+import {useDispatch, useSelector} from 'react-redux';
+import {StepProviderContext} from '../../../Global/StepContext';
+import {getCarInterior} from '../../../Redux/ducks/car';
+import {
+  seedColorResponse,
+  seedInteriorPriceResponse,
+} from '../../../Redux/sagas/requests/seedresponse';
+import {numberSeparator} from '../../../utils/NumberSeparator';
 
 const InteriorColorContainer = props => {
+  const dispatch = useDispatch();
+  let apiInteriors = useSelector(state => state.cars.interior);
+  let colors =
+    apiInteriors !== undefined ? apiInteriors : seedInteriorPriceResponse;
+  const {setInteriorPrice, userSelectedCar} = useContext(StepProviderContext);
+
   const [interior, setInterior] = useState({
     activeObject: null,
-    objects: {
-      id: 1,
-      interior: [
-        {
-          id: 1,
-          description: 'Black & White',
-          price: '4,500',
-          currency: 'AED',
-          included: false,
-          color: '#f5f7fa',
-        },
-        {
-          id: 2,
-          description: 'All Black',
-          price: '',
-          currency: 'AED',
-          included: true,
-          color: '#000',
-        },
-      ],
-    },
+    objects: colors,
   });
+
+  useEffect(() => {
+    const dispatcher = () => dispatch(getCarInterior(userSelectedCar));
+    dispatcher();
+  }, [userSelectedCar]);
+
   const [includedInterior, setIncludedInterior] = useState(false);
 
-  function toggleActive(index) {
-    setInterior({...interior, activeObject: interior.objects.interior[index]});
+  function toggleActive(index, element) {
+    setInterior({
+      ...interior,
+      activeObject: interior.objects.interior_features[index],
+    });
 
-    if (interior.objects.interior[index].included === true) {
+    if (interior.objects.interior_features[index].included === true) {
       setIncludedInterior(true);
     } else {
       setIncludedInterior(false);
     }
+    setInteriorPrice(element.price);
   }
 
   function showPrice(element) {
-    if (element.included) {
+    if (element.option_included) {
       return 'Included';
     } else {
-      return `${element.currency} ${element.price}`;
+      return ` ${'AED'} ${numberSeparator(element.price)}`;
     }
   }
 
   function toggleActiveStyles(index) {
-    return interior.objects.interior[index] === interior.activeObject
+    return interior.objects.interior_features[index] === interior.activeObject
       ? true
       : false;
   }
   return (
     <InteriorSpecContainer>
-      {interior.objects.interior.map((element, index) => (
-        <Pressable onPress={() => toggleActive(index)} key={element.id}>
+      {interior.objects.interior_features.map((element, index) => (
+        <Pressable
+          onPress={() => toggleActive(index, element)}
+          key={element.id}>
           <InteriorSpecText key={element.id}>
             <SpecLabelPrefix active={toggleActiveStyles(index)}>
               {element.description}
