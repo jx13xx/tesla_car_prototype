@@ -33,7 +33,7 @@
   <p align="center">
      A prototype app for Tesla for purchasing new cars build on React Native
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/jx13xx/tesla_car_prototype/">View Demo</a>
     ·
     <a href="https://github.com/jx13xx/tesla_car_prototype/issues">Report Bug</a>
     ·
