@@ -24,11 +24,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="[https://github.com/othneildrew/Best-README-Template](https://github.com/jx13xx/tesla_car_prototype)">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Best-README-Template</h3>
+<h3 align="center">Tesla Car Booking Prototype</h3>
 
   <p align="center">
      A prototype app for Tesla for purchasing new cars build on React Native
