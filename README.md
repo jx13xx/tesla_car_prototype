@@ -39,6 +39,9 @@
     ·
     <a href="https://github.com/jx13xx/tesla_car_prototype/pulls">Request Feature</a>
   </p>
+  <p>
+    Contributed by <a href="https://jx13xx.github.io/">Jean Xavier</a>
+   </p>
 </div>
 
 
